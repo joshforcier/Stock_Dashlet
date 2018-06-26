@@ -36,7 +36,7 @@ function stock_dashlet_func($mode=DASHLET_MODE_PREVIEW,$id="",$args=null)
 {
 	$output="";
 
-	//$imgbase=get_dashlet_url_base("stock")."/images/";
+	$imgbase=get_dashlet_url_base("stock")."/images/";
 
 	switch($mode){
 	case DASHLET_MODE_GETCONFIGHTML:
@@ -77,11 +77,11 @@ function stock_dashlet_func($mode=DASHLET_MODE_PREVIEW,$id="",$args=null)
 	    	<table>
 	    		<tr>
 	    			<td width="50px">' . $symbol_array . '</td>
-	    			<td width="50px">' . $current_price . '</td>
+	    			<td width="60px">' . $current_price . '</td>
 	    			<td width="50px">' . $percent_change . '%</td>
 	    		</tr>    		
 	    	</table><br>';
-    	}
+		}
 
 		$x = 0;    	
 		do {
@@ -92,7 +92,7 @@ function stock_dashlet_func($mode=DASHLET_MODE_PREVIEW,$id="",$args=null)
 		break;
 
 	case DASHLET_MODE_PREVIEW:
-
+		$output="<p><img src='".$imgbase."stock.png'></p>";
 		break;
 	}
 			
